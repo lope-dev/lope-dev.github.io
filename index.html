@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hope Ogungbemi | AI Platform Engineer</title>
+  <meta name="description" content="Hope Ogungbemi, AI Platform Engineer and Cloud/DevOps Engineer with 6+ years building production AI systems, RAG pipelines, multi-agent platforms, and cloud-native infrastructure in regulated environments." />
+  <meta property="og:title" content="Hope Ogungbemi | AI Platform Engineer" />
+  <meta property="og:description" content="Portfolio of Hope Ogungbemi. LangGraph, Bedrock, Terraform, AWS, LangChain, RAG, Python" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #fafdfb;
+      --bg-card:   #f2f9f7;
+      --bg-card2:  #e8f5f1;
+      --bg-hover:  #e4f3ef;
+      --border:    #d4ede8;
+      --border-dk: #b6ddd6;
+
+      --teal:      #0d9488;
+      --teal-lt:   #f0fdfa;
+      --teal-mid:  #ccfbf1;
+      --cyan:      #0891b2;
+      --cyan-lt:   #ecfeff;
+      --cyan-mid:  #cffafe;
+      --amber:     #b45309;
+      --amber-lt:  #fffbeb;
+      --amber-mid: #fde68a;
+      --coral:     #be123c;
+      --coral-lt:  #fff1f4;
+
+      --text:      #134e4a;
+      --text-2:    #4b7a74;
+      --text-3:    #90b8b2;
+
+      --grad:      linear-gradient(135deg, #0d9488, #0891b2);
+      --grad-warm: linear-gradient(135deg, #0d9488, #b45309);
+      --grad-b:    linear-gradient(135deg, #0891b2, #0d9488);
+
+      --nav-h: 66px;
+      --r:     10px;
+      --r-lg:  18px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.65; overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-card); }
+    ::-webkit-scrollbar-thumb { background: var(--border-dk); border-radius: 3px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(20px,6vw,80px);
+      background: rgba(250,253,251,0);
+      border-bottom: 1px solid transparent;
+      transition: background .35s, border-color .35s, backdrop-filter .35s;
+    }
+    nav.scrolled {
+      background: rgba(250,253,251,0.93);
+      border-bottom-color: var(--border);
+      backdrop-filter: blur(14px);
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em;
+      background: var(--grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      font-size: .84rem; font-weight: 500; color: var(--text-2);
+      text-decoration: none; padding: 6px 13px; border-radius: 7px;
+      transition: color .2s, background .2s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--bg-card); }
+    .nav-links a.active { color: var(--teal); }
+    .nav-cta {
+      font-size: .84rem; font-weight: 700; color: #fff;
+      background: var(--grad); padding: 8px 20px; border-radius: 8px;
+      text-decoration: none; transition: opacity .2s, transform .2s;
+    }
+    .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: calc(var(--nav-h) + 60px) clamp(20px,8vw,120px) 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .blob {
+      position: absolute; border-radius: 50%; filter: blur(90px); opacity: .14;
+    }
+    .blob-1 { width: 480px; height: 480px; background: #0d9488; top: -100px; right: 0%; }
+    .blob-2 { width: 340px; height: 340px; background: #0891b2; bottom: 5%; left: -80px; }
+    .blob-3 { width: 220px; height: 220px; background: #b45309; top: 50%; right: 18%; }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal-lt); color: var(--teal);
+      border: 1px solid var(--teal-mid);
+      border-radius: 100px; font-size: .75rem; font-weight: 600;
+      padding: 5px 14px; margin-bottom: 28px; letter-spacing: .03em;
+    }
+    .badge-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.45;transform:scale(.75)} }
+
+    .avatar-wrap {
+      width: 68px; height: 68px; border-radius: 16px;
+      background: var(--grad);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 26px; box-shadow: 0 8px 24px rgba(13,148,136,.22);
+    }
+    .avatar-initials {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800; font-size: 1.35rem; color: #fff; letter-spacing: -.02em;
+    }
+
+    h1.hero-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem,6vw,4.4rem);
+      font-weight: 800; letter-spacing: -.045em; line-height: 1.04;
+      margin-bottom: 14px; color: var(--text);
+    }
+    h1.hero-name span {
+      background: var(--grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .hero-typed {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(.82rem,1.8vw,1rem);
+      color: var(--text-2); margin-bottom: 22px; min-height: 1.5em;
+    }
+    .cursor {
+      display: inline-block; width: 2px; height: .9em;
+      background: var(--teal); vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50%{opacity:0} }
+
+    .hero-bio {
+      font-size: 1.04rem; color: var(--text-2);
+      line-height: 1.78; max-width: 640px; margin-bottom: 36px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 52px; }
+    .btn-p {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--grad); color: #fff;
+      font-weight: 700; font-size: .9rem;
+      padding: 13px 28px; border-radius: var(--r);
+      text-decoration: none; cursor: pointer; border: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-p:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(13,148,136,.28); }
+    .btn-o {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      font-weight: 600; font-size: .9rem;
+      padding: 12px 26px; border-radius: var(--r);
+      text-decoration: none; border: 1.5px solid var(--border-dk);
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .btn-o:hover { border-color: var(--teal); background: var(--teal-lt); transform: translateY(-2px); }
+
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 36px; }
+    .stat { display: flex; flex-direction: column; gap: 2px; }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800; font-size: 1.9rem; letter-spacing: -.04em;
+      background: var(--grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .stat-label { font-size: .74rem; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* SECTION SHELL */
+    section { padding: 96px clamp(20px,8vw,120px); }
+    .stag {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem; font-weight: 600; color: var(--teal);
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .stag::before { content: '//'; color: var(--text-3); }
+    .stitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.9rem,4vw,2.7rem);
+      font-weight: 800; letter-spacing: -.04em; line-height: 1.12; margin-bottom: 10px;
+    }
+    .ssub { font-size: 1rem; color: var(--text-2); max-width: 540px; margin-bottom: 52px; line-height: 1.7; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--border-dk), transparent); }
+
+    .fu { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .fu.vis { opacity: 1; transform: translateY(0); }
+    .fu:nth-child(2){transition-delay:.08s} .fu:nth-child(3){transition-delay:.16s} .fu:nth-child(4){transition-delay:.24s}
+
+    /* ABOUT */
+    #about { background: var(--bg-card); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-text p { color: var(--text-2); font-size: 1.01rem; line-height: 1.8; margin-bottom: 16px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); font-weight: 600; }
+
+    .about-cards { display: flex; flex-direction: column; gap: 13px; }
+    .ac {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 17px 19px;
+      display: flex; align-items: flex-start; gap: 13px;
+      transition: border-color .2s, transform .2s;
+    }
+    .ac:hover { border-color: var(--border-dk); transform: translateX(3px); }
+    .ac-icon {
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: .65rem; color: #fff;
+    }
+    .i-teal   { background: var(--teal); }
+    .i-cyan   { background: var(--cyan); }
+    .i-amber  { background: var(--amber); }
+    .i-coral  { background: var(--coral); }
+    .ac h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .87rem; margin-bottom: 3px; }
+    .ac p  { font-size: .77rem; color: var(--text-2); line-height: 1.5; }
+
+    /* SKILLS */
+    #skills { background: var(--bg); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
+    .sd {
+      border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 26px;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .sd:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(13,148,136,.08); }
+    .sd.sa { --a: var(--teal);  --alt: var(--teal-lt);  border-top: 3px solid var(--teal);  }
+    .sd.sb { --a: var(--cyan);  --alt: var(--cyan-lt);  border-top: 3px solid var(--cyan);  }
+    .sd.sc { --a: var(--amber); --alt: var(--amber-lt); border-top: 3px solid var(--amber); }
+    .sd.sd2{ --a: var(--coral); --alt: var(--coral-lt); border-top: 3px solid var(--coral); }
+
+    .sd-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .sd-ic {
+      width: 38px; height: 38px; border-radius: 9px;
+      background: var(--alt); display: flex; align-items: center; justify-content: center;
+    }
+    .sd-ic svg { width: 18px; height: 18px; }
+    .sd-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9rem; }
+    .sd-sub { color: var(--text-3); font-size: .7rem; font-family: 'JetBrains Mono', monospace; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: .69rem; font-family: 'JetBrains Mono', monospace;
+      padding: 3px 9px; border-radius: 5px;
+      background: var(--alt); color: var(--a);
+      border: 1px solid transparent; font-weight: 500;
+    }
+
+    /* EXPERIENCE */
+    #experience { background: var(--bg-card); }
+    .timeline { position: relative; padding-left: 26px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 10px; bottom: 10px;
+      width: 2px; background: linear-gradient(180deg, var(--teal), var(--cyan), var(--amber));
+      border-radius: 2px;
+    }
+    .tl { position: relative; margin-bottom: 50px; }
+    .tl::before {
+      content: ''; position: absolute; left: -31px; top: 7px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--tc, var(--teal));
+      box-shadow: 0 0 0 3px var(--bg-card), 0 0 0 5px var(--tc, var(--teal));
+    }
+    .tl.t1 { --tc: var(--teal); }
+    .tl.t2 { --tc: var(--cyan); }
+    .tl.t3 { --tc: var(--amber); }
+
+    .tl-co {
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 600;
+      color: var(--tc, var(--teal)); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px;
+    }
+    .tl-role { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.22rem; margin-bottom: 3px; }
+    .tl-period { font-size: .76rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; margin-bottom: 16px; }
+    .tl-body {
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 24px;
+    }
+    .tl-body ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tl-body li { display: flex; gap: 10px; font-size: .89rem; color: var(--text-2); line-height: 1.6; }
+    .tl-body li::before { content: '->'; color: var(--tc, var(--teal)); flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: .78rem; margin-top: 2px; }
+    .tl-body li strong { color: var(--text); }
+    .tl-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .chip { font-size: .67rem; font-family: 'JetBrains Mono', monospace; padding: 3px 8px; border-radius: 4px; background: var(--bg-card); color: var(--text-3); border: 1px solid var(--border); }
+
+    /* PROJECTS */
+    #projects { background: var(--bg); }
+    .proj-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 18px; }
+    .pc {
+      background: var(--bg-card); border: 1.5px solid var(--border);
+      border-radius: var(--r-lg); padding: 28px;
+      display: flex; flex-direction: column;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      position: relative; overflow: hidden;
+    }
+    .pc::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--pg, var(--grad));
+      transform: scaleX(0); transform-origin: left; transition: transform .3s ease;
+    }
+    .pc:hover { border-color: var(--border-dk); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,148,136,.09); }
+    .pc:hover::before { transform: scaleX(1); }
+    .pc.wide  { grid-column: span 7; }
+    .pc.mid   { grid-column: span 5; }
+    .pc.third { grid-column: span 4; }
+
+    .pc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 13px; }
+    .pc-ic {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: .68rem; color: #fff; line-height: 1.2; text-align: center;
+    }
+    .i-t { background: var(--teal); }
+    .i-c { background: var(--cyan); }
+    .i-a { background: var(--amber); }
+    .i-r { background: var(--coral); }
+    .i-m { background: var(--grad); }
+
+    .pc-gh {
+      display: flex; align-items: center; gap: 6px;
+      font-size: .72rem; font-weight: 600; color: var(--text-3);
+      text-decoration: none; padding: 5px 10px; border-radius: 7px;
+      border: 1px solid var(--border); transition: color .2s, border-color .2s;
+    }
+    .pc-gh:hover { color: var(--teal); border-color: var(--teal); }
+    .pc-gh svg { width: 13px; height: 13px; }
+
+    .pc-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 9px; line-height: 1.3; }
+    .pc-desc  { font-size: .87rem; color: var(--text-2); line-height: 1.65; flex: 1; margin-bottom: 14px; }
+
+    .pc-metrics { display: flex; gap: 18px; margin-bottom: 14px; padding: 11px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .pm { display: flex; flex-direction: column; }
+    .pm-val { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--pa, var(--teal)); }
+    .pm-lbl { font-size: .65rem; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; }
+
+    .pc-hi { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+    .ph { display: flex; align-items: flex-start; gap: 8px; font-size: .79rem; color: var(--text-2); line-height: 1.55; }
+    .ph-d { width: 5px; height: 5px; border-radius: 50%; background: var(--pa, var(--teal)); flex-shrink: 0; margin-top: 5px; }
+
+    .arch {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 5px;
+      margin-bottom: 14px; padding: 12px 14px;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+    }
+    .an {
+      font-size: .67rem; font-family: 'JetBrains Mono', monospace;
+      padding: 3px 9px; border-radius: 4px;
+      border: 1px solid var(--pb, var(--border-dk));
+      color: var(--pa, var(--teal)); background: var(--plt, var(--teal-lt));
+    }
+    .aa { color: var(--text-3); font-size: .75rem; }
+
+    .code-box {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 13px 15px; margin-bottom: 14px;
+      font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--text-2); line-height: 1.6; overflow-x: auto;
+    }
+    .ck { color: var(--cyan); }
+    .cf { color: var(--teal); }
+    .cs { color: var(--amber); }
+    .cc { color: var(--text-3); }
+
+    .pc-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
+    .ps { font-size: .67rem; font-family: 'JetBrains Mono', monospace; padding: 3px 8px; border-radius: 4px; background: var(--bg); color: var(--text-3); border: 1px solid var(--border); }
+
+    /* CERTS */
+    #certifications { background: var(--bg-card); }
+    .certs-row { display: flex; flex-wrap: wrap; gap: 18px; }
+    .cert {
+      flex: 1; min-width: 230px;
+      background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--r);
+      padding: 22px 24px; display: flex; align-items: flex-start; gap: 15px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .cert:hover { border-color: var(--border-dk); transform: translateY(-3px); box-shadow: 0 8px 22px rgba(13,148,136,.08); }
+    .cert-badge {
+      width: 46px; height: 46px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: .62rem; color: #fff; flex-shrink: 0; text-align: center; line-height: 1.2;
+    }
+    .cert h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .9rem; line-height: 1.3; margin-bottom: 4px; }
+    .cert p  { font-size: .74rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
+    .cert-ok { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; font-weight: 600; color: var(--teal); margin-top: 7px; }
+    .cert-ok::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+    /* EDUCATION */
+    #education { background: var(--bg); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 16px; }
+    .edu {
+      background: var(--bg-card); border: 1.5px solid var(--border); border-radius: var(--r); padding: 24px;
+      transition: border-color .2s;
+    }
+    .edu:hover { border-color: var(--border-dk); }
+    .edu-deg { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .92rem; margin-bottom: 4px; }
+    .edu-sch { font-size: .8rem; color: var(--teal); margin-bottom: 3px; font-weight: 500; }
+    .edu-yr  { font-size: .73rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
+
+    /* CONTACT */
+    #contact { background: var(--bg-card); text-align: center; }
+    .contact-inner { max-width: 620px; margin: 0 auto; }
+    .contact-inner .stitle { text-align: center; margin-bottom: 14px; }
+    .contact-inner > p { font-size: 1rem; color: var(--text-2); line-height: 1.75; margin-bottom: 38px; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .cl {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .86rem; font-weight: 500; color: var(--text-2);
+      text-decoration: none; padding: 11px 22px; border-radius: var(--r);
+      border: 1.5px solid var(--border); background: var(--bg);
+      transition: border-color .2s, color .2s, transform .2s, box-shadow .2s;
+    }
+    .cl:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(13,148,136,.1); }
+    .cl.email:hover  { border-color: var(--teal);  color: var(--teal);  }
+    .cl.github:hover { border-color: var(--cyan);  color: var(--cyan);  }
+    .cl.li:hover     { border-color: var(--amber); color: var(--amber); }
+    .cl.phone:hover  { border-color: var(--coral); color: var(--coral); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 26px clamp(20px,8vw,120px);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    footer p { font-size: .76rem; color: var(--text-3); }
+    .f-name {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .85rem;
+      background: var(--grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* MOBILE */
+    @media (max-width: 960px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .pc.wide, .pc.mid { grid-column: span 12; }
+    }
+    @media (max-width: 720px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu {
+        position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+        background: rgba(250,253,251,.97); backdrop-filter: blur(20px);
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+        transform: translateX(100%); transition: transform .35s ease; z-index: 99;
+      }
+      .mobile-menu.open { transform: translateX(0); }
+      .mobile-menu a { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text); text-decoration: none; }
+      section { padding: 72px clamp(20px,5vw,40px); }
+      .pc.third { grid-column: span 12; }
+      .hero-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">hope.ogungbemi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://github.com/lope-dev" target="_blank" rel="noopener" class="nav-cta">GitHub &nearr;</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"          onclick="closeMenu()">About</a>
+  <a href="#skills"         onclick="closeMenu()">Skills</a>
+  <a href="#experience"     onclick="closeMenu()">Experience</a>
+  <a href="#projects"       onclick="closeMenu()">Projects</a>
+  <a href="#certifications" onclick="closeMenu()">Certs</a>
+  <a href="#contact"        onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      Open to mid-level, senior, staff and full-time consultant roles
+    </div>
+    <div class="avatar-wrap"><span class="avatar-initials">HO</span></div>
+    <h1 class="hero-name">Hope <span>Ogungbemi</span></h1>
+    <p class="hero-typed" id="heroTyped"></p>
+    <p class="hero-bio">
+      Six-plus years building AI systems and cloud infrastructure that teams depend on in production. At Foundation Medicine I architect RAG platforms serving 50,000+ clinical documents, design multi-agent LLM systems in LangGraph, and deploy three-tier applications end to end via Terraform, Docker, ECR, and ECS. Based in Maryland, pursuing an M.S. in Data Science and AI.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-p">View My Work</a>
+      <a href="#contact"  class="btn-o">Get in Touch</a>
+      <a href="https://github.com/lope-dev" target="_blank" rel="noopener" class="btn-o">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Cloud Certifications</span></div>
+      <div class="stat"><span class="stat-num" data-target="60">0</span><span class="stat-label">% Faster AI Analysis</span></div>
+      <div class="stat"><span class="stat-num" data-target="50">0</span><span class="stat-label">K+ Docs in RAG Platform</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="fu">
+      <div class="stag">About Me</div>
+      <h2 class="stitle">Engineer by trade,<br>problem-solver by habit</h2>
+      <div class="about-text">
+        <p>
+          I came into tech through an unusual path: a degree in Environmental Science, then a deliberate pivot into cloud infrastructure when I realized the hardest problems in the world run on data. That outsider perspective stuck. I still care more about <strong>what the system does for real people</strong> than whether it looks impressive in a diagram.
+        </p>
+        <p>
+          At Foundation Medicine, the AI work goes deep. I built the retrieval layer for a production RAG platform on <strong>Amazon Bedrock and OpenSearch</strong>, handling document chunking, hybrid keyword-semantic search, and embedding strategies tuned for clinical genomic text. The platform now serves 50,000+ documents at under three seconds per query, with relevance scores roughly <strong>28% higher</strong> than the baseline system it replaced.
+        </p>
+        <p>
+          On the agentic side, I designed a <strong>multi-agent LLM platform in LangGraph and AWS Bedrock Agents</strong> with five specialized agents covering clinical, CRM, and research workflows. Getting state management, retry logic, and safe fallback paths right across agent boundaries was the interesting engineering challenge. The result was about a <strong>60% reduction in analyst data synthesis time</strong> once teams started running production workflows through it.
+        </p>
+        <p>
+          I also built <strong>MCP-compliant tool servers</strong> inside our GitHub and Jenkins environments, treating tool surface area as a product: proper input validation, error handling, and documentation so agents could call production tools reliably without unexpected failures cascading through a workflow. And I wired <strong>Salesforce CRM into our AI summarization layer</strong> via REST and webhooks, which brought over 200 internal users onto the integration within the first quarter.
+        </p>
+        <p>
+          The infrastructure side runs in parallel: three-tier application deployments via Terraform and CloudFormation, Dockerized services through ECR and ECS, CI/CD through GitHub Actions and Jenkins, and cost visibility through <strong>AWS myApplication</strong> so teams know exactly what their workloads cost.
+        </p>
+      </div>
+    </div>
+    <div class="about-cards fu">
+      <div class="ac">
+        <div class="ac-icon i-teal">RAG</div>
+        <div>
+          <h4>Production RAG and AI Systems</h4>
+          <p>Built retrieval layers on Bedrock and OpenSearch for clinical genomic data. Chunking, hybrid search, reranking, and embedding strategies tuned for domain-specific text at scale.</p>
+        </div>
+      </div>
+      <div class="ac">
+        <div class="ac-icon i-cyan">AGT</div>
+        <div>
+          <h4>Multi-Agent LLM Platforms</h4>
+          <p>Designed multi-agent systems in LangGraph with explicit state management, configurable retry logic, and fallback paths. Five specialized agents covering clinical, CRM, and research workflows.</p>
+        </div>
+      </div>
+      <div class="ac">
+        <div class="ac-icon i-amber">IaC</div>
+        <div>
+          <h4>Cloud Infrastructure and DevOps</h4>
+          <p>Three-tier app deployments via Terraform and CloudFormation, containerized services through ECR and ECS, CI/CD pipelines on GitHub Actions and Jenkins, cost tracking with AWS myApplication.</p>
+        </div>
+      </div>
+      <div class="ac">
+        <div class="ac-icon i-coral">SEC</div>
+        <div>
+          <h4>HIPAA Compliance and AI Governance</h4>
+          <p>IAM policies, SCPs, human-in-the-loop validation, structured output verification, and AI evaluation pipelines. Getting AI outputs cleared for regulated clinical production environments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="stag">Technical Skills</div>
+  <h2 class="stitle">The full stack</h2>
+  <p class="ssub">Four domains across AI, cloud, data, and DevOps. Tools I have shipped production work with, not a checkbox list.</p>
+  <div class="skills-grid">
+
+    <div class="sd sa fu">
+      <div class="sd-hd">
+        <div class="sd-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M18 2l2 2-2 2M22 2l-2 2"/></svg>
+        </div>
+        <div><div class="sd-title">AI Orchestration and LLMs</div><div class="sd-sub">Agents · RAG · GenAI</div></div>
+      </div>
+      <div class="tags">
+        <span class="tag">LangGraph</span><span class="tag">LangChain</span>
+        <span class="tag">LlamaIndex</span><span class="tag">CrewAI</span>
+        <span class="tag">AutoGen</span><span class="tag">Flowise</span>
+        <span class="tag">MCP</span><span class="tag">Bedrock Agents</span>
+        <span class="tag">OpenAI GPT-4</span><span class="tag">Anthropic Claude</span>
+        <span class="tag">Meta Llama</span><span class="tag">Amazon Titan</span>
+        <span class="tag">RAG Pipelines</span><span class="tag">Hybrid Retrieval</span>
+        <span class="tag">Reranking</span><span class="tag">Prompt Engineering</span>
+        <span class="tag">LLM-as-Judge</span><span class="tag">AI Eval Pipelines</span>
+        <span class="tag">n8n</span><span class="tag">Ollama</span>
+      </div>
+    </div>
+
+    <div class="sd sb fu">
+      <div class="sd-hd">
+        <div class="sd-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        </div>
+        <div><div class="sd-title">Cloud and AI Infrastructure</div><div class="sd-sub">AWS · Azure · Bedrock</div></div>
+      </div>
+      <div class="tags">
+        <span class="tag">Amazon Bedrock</span><span class="tag">SageMaker</span>
+        <span class="tag">Kendra</span><span class="tag">Comprehend Medical</span>
+        <span class="tag">AWS Lambda</span><span class="tag">ECS / ECR</span>
+        <span class="tag">S3</span><span class="tag">DynamoDB</span>
+        <span class="tag">EventBridge</span><span class="tag">CloudWatch</span>
+        <span class="tag">AWS myApplication</span>
+        <span class="tag">Azure Data Factory</span>
+        <span class="tag">Azure Databricks</span>
+        <span class="tag">OpenSearch</span>
+        <span class="tag">Pinecone</span><span class="tag">pgvector</span>
+      </div>
+    </div>
+
+    <div class="sd sc fu">
+      <div class="sd-hd">
+        <div class="sd-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div><div class="sd-title">Data Engineering</div><div class="sd-sub">Pipelines · Lakehouse · ETL</div></div>
+      </div>
+      <div class="tags">
+        <span class="tag">PySpark</span><span class="tag">Apache Spark</span>
+        <span class="tag">Delta Lake</span><span class="tag">ETL / ELT</span>
+        <span class="tag">Lakehouse Architecture</span>
+        <span class="tag">CDC Processing</span>
+        <span class="tag">PostgreSQL</span><span class="tag">SQL / Spark SQL</span>
+        <span class="tag">Power BI</span><span class="tag">Streamlit</span>
+        <span class="tag">Plotly</span><span class="tag">SQLAlchemy</span>
+      </div>
+    </div>
+
+    <div class="sd sd2 fu">
+      <div class="sd-hd">
+        <div class="sd-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <div><div class="sd-title">DevOps, IaC and Security</div><div class="sd-sub">Terraform · Docker · CI/CD</div></div>
+      </div>
+      <div class="tags">
+        <span class="tag">Terraform</span><span class="tag">CloudFormation</span>
+        <span class="tag">Docker / Dockerfile</span>
+        <span class="tag">GitHub Actions</span><span class="tag">Jenkins</span>
+        <span class="tag">IAM / SCP</span><span class="tag">HIPAA</span>
+        <span class="tag">Azure Key Vault</span>
+        <span class="tag">Logz.io</span><span class="tag">Grafana</span>
+        <span class="tag">Python</span><span class="tag">Bash</span>
+        <span class="tag">GraphQL</span><span class="tag">REST</span>
+        <span class="tag">Salesforce API</span><span class="tag">Webhooks</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="stag">Career Timeline</div>
+  <h2 class="stitle">Where I have done the work</h2>
+  <p class="ssub">Six years across three employers. Each one raised the stakes on what production actually means.</p>
+  <div class="timeline">
+
+    <div class="tl t1 fu">
+      <div class="tl-co">Foundation Medicine (Roche Group) &middot; Remote</div>
+      <div class="tl-role">AI Platform Engineer &middot; Senior AWS and Cloud Engineer</div>
+      <div class="tl-period">2020 to Present</div>
+      <div class="tl-body">
+        <ul>
+          <li><span>Architected the retrieval layer for a <strong>production RAG platform on Amazon Bedrock and OpenSearch</strong>, handling document chunking strategy and hybrid keyword-semantic search across 50,000+ genomic documents. Queries run at under three seconds with relevance scores <strong>28% higher</strong> than the baseline system replaced.</span></li>
+          <li><span>Designed a <strong>multi-agent LLM platform in LangGraph and AWS Bedrock Agents</strong> with five specialized agents covering clinical, CRM, and research workflows, with explicit state management, configurable retry logic, and safe fallback paths at every agent transition. Analyst data synthesis time dropped by <strong>60%</strong>.</span></li>
+          <li><span>Built <strong>MCP-compliant tool servers</strong> integrated within GitHub and Jenkins environments, treating tool surface area as a product: proper input validation, error checks, and documentation so agents call production tools reliably without failures cascading through workflows.</span></li>
+          <li><span>Connected <strong>Salesforce CRM to AI summarization pipelines</strong> via REST API and webhooks so account managers get AI-generated summaries inside the tools they already use. Over <strong>200 internal users</strong> adopted the integration within the first quarter.</span></li>
+          <li><span>Built <strong>semantic search and embedding pipelines using Pinecone</strong> for structured and unstructured clinical datasets, moving from fixed-size chunks to document-structure-aware chunking that made a real difference in retrieval accuracy for genomic text.</span></li>
+          <li><span>Developed a <strong>conversational interface for clinical data management</strong> using LangChain and PostgreSQL where team members type requests in plain English, the system maps them to the correct database operations, and cuts back-and-forth with the data team considerably.</span></li>
+          <li><span>Designed and deployed <strong>three-tier application architectures</strong> via Terraform and CloudFormation, covering compute, application, and data layers with consistent reproducibility across dev, staging, and production.</span></li>
+          <li><span>Wrote and maintained <strong>Dockerfiles</strong> defining containerized services, pushed images to <strong>ECR</strong>, and orchestrated deployments through <strong>ECS</strong> task definitions including multi-container sidecar patterns for inter-service communication.</span></li>
+          <li><span>Managed <strong>CI/CD pipelines via GitHub Actions and Jenkins</strong> automating build, test, and release workflows, cutting release cycle delays by <strong>50%</strong>.</span></li>
+          <li><span>Implemented <strong>cost tracking via AWS myApplication</strong>, tagging resources by application boundary and generating reports that gave teams clear ownership of cloud spend. Set up CloudWatch and Logz.io observability that reduced mean time to detect incidents by <strong>30%</strong>.</span></li>
+          <li><span>Implemented a <strong>HIPAA-compliant AI governance layer</strong> covering IAM policies, Service Control Policies, human-in-the-loop validation, structured output verification, and AI evaluation pipelines to get AI outputs cleared for regulated clinical production.</span></li>
+        </ul>
+        <div class="tl-chips">
+          <span class="chip">LangGraph</span><span class="chip">LangChain</span>
+          <span class="chip">Amazon Bedrock</span><span class="chip">OpenSearch</span>
+          <span class="chip">Pinecone</span><span class="chip">MCP</span>
+          <span class="chip">Bedrock Agents</span><span class="chip">RAG</span>
+          <span class="chip">Terraform</span><span class="chip">CloudFormation</span>
+          <span class="chip">Docker</span><span class="chip">ECR</span><span class="chip">ECS</span>
+          <span class="chip">GitHub Actions</span><span class="chip">Jenkins</span>
+          <span class="chip">AWS myApplication</span><span class="chip">CloudWatch</span>
+          <span class="chip">Logz.io</span><span class="chip">Salesforce API</span>
+          <span class="chip">HIPAA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl t2 fu">
+      <div class="tl-co">AHEAD &middot; Chicago, IL</div>
+      <div class="tl-role">Cloud Engineer &middot; Data Engineer / DevOps Consultant</div>
+      <div class="tl-period">2018 to 2020</div>
+      <div class="tl-body">
+        <ul>
+          <li><span>Designed and operated AWS environments for data-heavy client workloads across <strong>10+ enterprise accounts</strong>. Built reusable Terraform modules that cut provisioning time by <strong>70%</strong> compared to the manual process teams had inherited.</span></li>
+          <li><span>Built Azure Lakehouse data pipelines using ADF, Databricks with PySpark, and Delta Lake supporting analytics platforms processing <strong>over 5TB per day</strong>, wired with REST API integrations via OAuth 2.0 and webhook triggers.</span></li>
+          <li><span>Shipped <strong>Dockerized Streamlit microservices with GraphQL interfaces</strong> deployed on AWS ECS using Terraform with Auto Scaling and CloudWatch monitoring configured for high availability.</span></li>
+          <li><span>Enforced IAM role strategies across 5+ environments, <strong>reducing unauthorised access incidents by 90%</strong>. Integrated Azure Key Vault with ADF for secrets management, eliminating hardcoded connection strings.</span></li>
+        </ul>
+        <div class="tl-chips">
+          <span class="chip">Terraform</span><span class="chip">AWS</span>
+          <span class="chip">Azure ADF</span><span class="chip">Databricks</span>
+          <span class="chip">PySpark</span><span class="chip">Delta Lake</span>
+          <span class="chip">Docker</span><span class="chip">ECS</span>
+          <span class="chip">GraphQL</span><span class="chip">IAM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl t3 fu">
+      <div class="tl-co">TEKYPRO &middot; Maryland</div>
+      <div class="tl-role">Cloud Engineer</div>
+      <div class="tl-period">2017 to 2018</div>
+      <div class="tl-body">
+        <ul>
+          <li><span>Provisioned AWS infrastructure using CloudFormation and Ansible across multiple client engagements, converting manually configured environments into <strong>repeatable automated deployments</strong>.</span></li>
+          <li><span>Built serverless and containerized backends using Lambda, ECS, API Gateway, and DynamoDB. Implemented monitoring and incident response automation that improved system recovery times.</span></li>
+        </ul>
+        <div class="tl-chips">
+          <span class="chip">CloudFormation</span><span class="chip">Ansible</span>
+          <span class="chip">Lambda</span><span class="chip">ECS</span>
+          <span class="chip">DynamoDB</span><span class="chip">Python</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="stag">Featured Projects</div>
+  <h2 class="stitle">Things I have actually built</h2>
+  <p class="ssub">Real code, real architecture decisions. Every project here has a repo and a story behind it.</p>
+  <div class="proj-grid">
+
+    <!-- P1: Real Estate AI Platform -->
+    <div class="pc wide fu" style="--pg: linear-gradient(90deg, var(--teal), var(--cyan)); --pa: var(--teal); --plt: var(--teal-lt); --pb: var(--border-dk);">
+      <div class="pc-top">
+        <div class="pc-ic i-t">RE<br>AI</div>
+        <a href="https://github.com/lope-dev" target="_blank" class="pc-gh">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View Code
+        </a>
+      </div>
+      <h3 class="pc-title">AI-Powered Real Estate Flipping Platform</h3>
+      <p class="pc-desc">Full-stack property management system for residential real estate investors. A Streamlit dashboard connected to a structured PostgreSQL database with a natural language chat interface. Type "show me all properties over budget" and get real answers backed by SQL, no manual querying required.</p>
+      <div class="pc-metrics">
+        <div class="pm"><span class="pm-val" style="color:var(--teal)">8</span><span class="pm-lbl">DB Tables</span></div>
+        <div class="pm"><span class="pm-val" style="color:var(--teal)">40+</span><span class="pm-lbl">SQL Queries</span></div>
+        <div class="pm"><span class="pm-val" style="color:var(--teal)">115+</span><span class="pm-lbl">Sample Records</span></div>
+        <div class="pm"><span class="pm-val" style="color:var(--teal)">7</span><span class="pm-lbl">App Tabs</span></div>
+      </div>
+      <div class="arch">
+        <span class="an">Streamlit UI</span><span class="aa">-&gt;</span>
+        <span class="an">LangChain + Ollama</span><span class="aa">-&gt;</span>
+        <span class="an">Intent Parser</span><span class="aa">-&gt;</span>
+        <span class="an">SQLAlchemy</span><span class="aa">-&gt;</span>
+        <span class="an">PostgreSQL</span>
+      </div>
+      <div class="pc-hi">
+        <div class="ph"><div class="ph-d"></div><span>Property lifecycle from Lead through Acquired, Renovating, Listed, and Sold with contractor management and performance ratings</span></div>
+        <div class="ph"><div class="ph-d"></div><span>LLM intent parser using Llama 3 via Ollama translates natural language into structured JSON CRUD operations</span></div>
+        <div class="ph"><div class="ph-d"></div><span>Crow's Foot ERD across 7 related tables, PostgreSQL stored functions for budget tracking, and 40+ business intelligence queries</span></div>
+      </div>
+      <div class="pc-stack">
+        <span class="ps">Python</span><span class="ps">Streamlit</span><span class="ps">PostgreSQL</span>
+        <span class="ps">LangChain</span><span class="ps">Ollama</span><span class="ps">Docker</span>
+        <span class="ps">SQLAlchemy</span><span class="ps">Plotly</span><span class="ps">GraphQL</span>
+      </div>
+    </div>
+
+    <!-- P2: Agentic Jira Security Triage -->
+    <div class="pc mid fu" style="--pg: linear-gradient(90deg, var(--cyan), var(--teal)); --pa: var(--cyan); --plt: var(--cyan-lt); --pb: #a5f3fc;">
+      <div class="pc-top">
+        <div class="pc-ic i-c">JIRA<br>AGT</div>
+        <a href="https://github.com/lope-dev" target="_blank" class="pc-gh">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View Code
+        </a>
+      </div>
+      <h3 class="pc-title">Agentic Jira Security Triage Pipeline</h3>
+      <p class="pc-desc">Complete agentic triage pipeline that eliminated manual security write-ups across the entire queue. Cron-triggered Jira ingestion, automated manager lookup via Google Sheets API, priority-based routing, and a LangChain agent that writes professional triage summaries and posts them as Jira comments automatically.</p>
+      <div class="pc-hi">
+        <div class="ph"><div class="ph-d" style="background:var(--cyan)"></div><span>Fully automated: zero manual write-ups on security tickets once deployed</span></div>
+        <div class="ph"><div class="ph-d" style="background:var(--cyan)"></div><span>LangChain agent generates professional triage summaries and posts them directly as Jira comments</span></div>
+        <div class="ph"><div class="ph-d" style="background:var(--cyan)"></div><span>Google Sheets API integration for dynamic manager lookup and priority-based routing logic</span></div>
+      </div>
+      <div class="pc-stack">
+        <span class="ps">LangChain</span><span class="ps">Jira API</span><span class="ps">Google Sheets API</span>
+        <span class="ps">Python</span><span class="ps">Cron</span><span class="ps">Agentic AI</span>
+      </div>
+    </div>
+
+    <!-- P3: Digital First Mate Concierge -->
+    <div class="pc third fu" style="--pg: linear-gradient(90deg, var(--amber), var(--teal)); --pa: var(--amber); --plt: var(--amber-lt); --pb: #fde68a;">
+      <div class="pc-top"><div class="pc-ic i-a">AI<br>SLS</div></div>
+      <h3 class="pc-title">Digital First Mate AI Sales Concierge</h3>
+      <p class="pc-desc">Conversational AI concierge built with n8n and GPT-4.1, using a tool-use architecture and window buffer memory. Users manage bookings entirely through natural language across six live API tools. Designed to carry over cleanly to hospitality, CRM, and e-commerce platforms.</p>
+      <div class="pc-hi">
+        <div class="ph"><div class="ph-d" style="background:var(--amber)"></div><span>Six live API tools connected and callable via natural language in a single conversation</span></div>
+        <div class="ph"><div class="ph-d" style="background:var(--amber)"></div><span>Window buffer memory maintains context across booking sessions</span></div>
+      </div>
+      <div class="pc-stack">
+        <span class="ps">n8n</span><span class="ps">GPT-4.1</span><span class="ps">Tool Use</span>
+        <span class="ps">REST APIs</span><span class="ps">Conversational AI</span>
+      </div>
+    </div>
+
+    <!-- P4: NL Ops Management -->
+    <div class="pc third fu" style="--pg: linear-gradient(90deg, var(--teal), var(--amber)); --pa: var(--teal); --plt: var(--teal-lt); --pb: var(--border-dk);">
+      <div class="pc-top"><div class="pc-ic i-t">NL<br>OPS</div></div>
+      <h3 class="pc-title">Natural Language Operations Manager</h3>
+      <p class="pc-desc">Full-stack AI operations tool where users manage business data through natural language. LLM parses user intent, dispatches structured CRUD operations to PostgreSQL, and maintains running totals automatically. The agent pattern applies directly to quoting platforms, carrier tracking, and sales workflow automation.</p>
+      <div class="code-box">
+<span class="cc"># "Add $50 groceries" parsed to:</span>
+{ <span class="cs">"operation"</span>: <span class="cs">"ADD"</span>,
+  <span class="cs">"type"</span>: <span class="cs">"DEBIT"</span>,
+  <span class="cs">"amount"</span>: <span class="ck">50</span> }
+      </div>
+      <div class="pc-stack">
+        <span class="ps">Python</span><span class="ps">LangChain</span>
+        <span class="ps">Ollama</span><span class="ps">PostgreSQL</span><span class="ps">Streamlit</span>
+      </div>
+    </div>
+
+    <!-- P5: Azure Lakehouse -->
+    <div class="pc third fu" style="--pg: linear-gradient(90deg, var(--cyan), var(--amber)); --pa: var(--cyan); --plt: var(--cyan-lt); --pb: #a5f3fc;">
+      <div class="pc-top"><div class="pc-ic i-c">LAKE<br>HSE</div></div>
+      <h3 class="pc-title">Enterprise Azure Lakehouse Platform</h3>
+      <p class="pc-desc">Production-grade Lakehouse on Azure Data Factory, Databricks, and Delta Lake with Bronze-Silver-Gold layering. Metadata-driven pipelines with automated quality checks and CI/CD-enabled deployments across dev, qa, and prod.</p>
+      <div class="pc-hi">
+        <div class="ph"><div class="ph-d" style="background:var(--cyan)"></div><span>45% reduction in data availability latency post-migration</span></div>
+        <div class="ph"><div class="ph-d" style="background:var(--cyan)"></div><span>30% improvement in data accuracy via automated quality gates at ingestion</span></div>
+      </div>
+      <div class="pc-stack">
+        <span class="ps">ADF</span><span class="ps">Databricks</span>
+        <span class="ps">PySpark</span><span class="ps">Delta Lake</span><span class="ps">GitHub Actions</span>
+      </div>
+    </div>
+
+    <!-- P6: IaC CI/CD -->
+    <div class="pc third fu" style="--pg: linear-gradient(90deg, var(--amber), var(--coral)); --pa: var(--amber); --plt: var(--amber-lt); --pb: #fde68a;">
+      <div class="pc-top"><div class="pc-ic i-a">IaC<br>CD</div></div>
+      <h3 class="pc-title">IaC and CI/CD Modernization Framework</h3>
+      <p class="pc-desc">Terraform module library and GitHub Actions pipeline set standardizing environment provisioning across dev, staging, and production. New environments go from zero to ready in under 20 minutes, down from the better part of a day.</p>
+      <div class="pc-hi">
+        <div class="ph"><div class="ph-d" style="background:var(--amber)"></div><span>50% reduction in release cycle time via automated build, test, and deploy</span></div>
+        <div class="ph"><div class="ph-d" style="background:var(--amber)"></div><span>Terraform modules supporting 3+ concurrent projects with zero environment drift</span></div>
+      </div>
+      <div class="pc-stack">
+        <span class="ps">Terraform</span><span class="ps">CloudFormation</span>
+        <span class="ps">GitHub Actions</span><span class="ps">Jenkins</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="stag">Certifications</div>
+  <h2 class="stitle">Verified credentials</h2>
+  <p class="ssub">Three active industry certifications from Amazon Web Services and HashiCorp. Actual exams, not study badges.</p>
+  <div class="certs-row">
+    <div class="cert fu">
+      <div class="cert-badge" style="background:var(--teal);">AWS<br>AI</div>
+      <div>
+        <h4>AWS Certified AI Practitioner</h4>
+        <p>Amazon Web Services</p>
+        <div class="cert-ok">Active and Verified</div>
+      </div>
+    </div>
+    <div class="cert fu">
+      <div class="cert-badge" style="background:var(--cyan);">AWS<br>DEV</div>
+      <div>
+        <h4>AWS Certified Developer, Associate</h4>
+        <p>Amazon Web Services</p>
+        <div class="cert-ok">Active and Verified</div>
+      </div>
+    </div>
+    <div class="cert fu">
+      <div class="cert-badge" style="background:var(--amber);">HCL<br>TF</div>
+      <div>
+        <h4>HashiCorp Certified: Terraform Associate</h4>
+        <p>HashiCorp</p>
+        <div class="cert-ok">Active and Verified</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="stag">Education</div>
+  <h2 class="stitle">Academic background</h2>
+  <div class="edu-grid">
+    <div class="edu fu" style="border-left:3px solid var(--teal)">
+      <div class="edu-deg">M.S., Data Science and Artificial Intelligence</div>
+      <div class="edu-sch">University of Central Missouri</div>
+      <div class="edu-yr">Expected 2027 &middot; In Progress</div>
+    </div>
+    <div class="edu fu" style="border-left:3px solid var(--cyan)">
+      <div class="edu-deg">A.A., General Studies</div>
+      <div class="edu-sch">Prince George's Community College, Maryland</div>
+      <div class="edu-yr">Completed</div>
+    </div>
+    <div class="edu fu" style="border-left:3px solid var(--amber)">
+      <div class="edu-deg">B.S., Environmental Science</div>
+      <div class="edu-sch">Adekunle Ajasin University, Nigeria</div>
+      <div class="edu-yr">Completed</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="stag" style="justify-content:center">Let's Connect</div>
+    <h2 class="stitle">Open to the right opportunity</h2>
+    <p>Looking for mid-level, senior, staff, or full-time consultant roles in AI platform engineering, cloud engineering, data engineering, or DevOps. Ideally somewhere with real technical challenges and a team that cares about how systems are built, not just that they shipped. If that sounds like your company, I would like to hear about it.</p>
+    <div class="contact-links">
+      <a href="mailto:tolumalkon@gmail.com" class="cl email">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        tolumalkon@gmail.com
+      </a>
+      <a href="https://github.com/lope-dev" target="_blank" rel="noopener" class="cl github">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/lope-dev
+      </a>
+      <a href="https://linkedin.com/in/tolu-ogungbemi" target="_blank" rel="noopener" class="cl li">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="tel:2404959471" class="cl phone">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        240-495-9471
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="f-name">Hope Ogungbemi</span>
+  <p>Built from scratch &middot; Maryland &middot; 2025</p>
+  <p>AI Platform Engineer &middot; Cloud &middot; DevOps</p>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  // Active nav
+  document.querySelectorAll('section[id]').forEach(s => {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+          const l = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (l) l.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' }).observe(s);
+  });
+
+  // Mobile menu
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu()  { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Typewriter
+  const phrases = [
+    'AI Platform Engineer · LangGraph + Bedrock',
+    'RAG Pipeline Architect · OpenSearch + Pinecone',
+    'Senior AWS Engineer · Terraform Certified',
+    'Multi-Agent LLM Systems · LangChain + MCP',
+    'Cloud and DevOps · Docker, ECR, ECS',
+  ];
+  let pi = 0, ci = 0, del = false;
+  const te = document.getElementById('heroTyped');
+  function typeLoop() {
+    const p = phrases[pi];
+    del ? ci-- : ci++;
+    te.innerHTML = p.slice(0, ci) + '<span class="cursor"></span>';
+    if (!del && ci === p.length) { del = true; setTimeout(typeLoop, 2000); return; }
+    if (del && ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+    setTimeout(typeLoop, del ? 24 : 50);
+  }
+  typeLoop();
+
+  // Fade-in
+  document.querySelectorAll('.fu').forEach(el => {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.1 }).observe(el);
+  });
+
+  // Counters
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const target = parseInt(el.dataset.target);
+        const sfx = (target === 50 || target === 60) ? '%' : (target === 50000 ? 'K+' : '+');
+        let n = 0; const step = target / 38;
+        const t = setInterval(() => {
+          n = Math.min(n + step, target);
+          el.textContent = Math.floor(n) + (n >= target ? sfx : '');
+          if (n >= target) clearInterval(t);
+        }, 28);
+      });
+    }, { threshold: 0.5 }).observe(el);
+  });
+</script>
+</body>
+</html>
